@@ -10,7 +10,8 @@ import woff from '../public/fonts/open-sans-v16-latin-regular.woff';
 // Import Components
 import Container from './components/container';
 import Header from './components/header';
-import Counter from './components/counter';
+import TodoList from './components/todo-list';
+import NewTodoForm from './components/new-todo-form';
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
@@ -37,26 +38,50 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 // Main page
-const App = () => {
-	// Register service worker
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/sw.js').then(registration => {
-				console.log('SW registered:', registration);
-			}).catch(error => {
-				console.log('SW registration failed:', error);
-			});
-		});
-	}
+class App extends React.Component {
+  constructor(props) {
+    super(props)
 
-	return (
-		<Container>
-			<Header>Hello World ⚡</Header>
-			<p>Example site using Styled React Boilerplate!</p>
-			<Counter/>
-			<GlobalStyle/>
-		</Container>
-	);
-};
+    this.state = {
+      todos: [],
+    }
+  }
+
+  registerServiceWorker() {
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('SW registered:', registration);
+        }).catch(error => {
+          console.log('SW registration failed:', error);
+        });
+      });
+    }
+  }
+
+  createTodo(todo) {
+    const { todos } = this.state
+    todos.push({ id: todos.length + 1, todo, done: false })
+    this.setState({ todos })
+  }
+
+  render() {
+    this.registerServiceWorker()
+
+    const { todos } = this.state
+    return (
+      <>
+        <GlobalStyle/>
+        <Container>
+          <Header>Mini Todo List</Header>
+          <p>A minimalistic todo list with a friendly UI.</p>
+          <TodoList todos={todos} />
+          <NewTodoForm createTodo={todo => this.createTodo(todo) }/>
+        </Container>
+      </>
+    )
+  }
+}
 
 export default hot(App);
