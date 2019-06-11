@@ -14,8 +14,8 @@ import createStore from './state/create-store'
 // Import Components
 import Container from './components/container';
 import Header from './components/header';
-import TodoList from './components/todo-list';
-import NewTodoForm from './components/new-todo-form';
+import TodoList from './components/todo-list'
+import NewTodo from './components/new-todo'
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
@@ -66,7 +66,7 @@ class App extends React.Component {
           <Header>Mini Todo List</Header>
           <p>A minimalistic todo list with a friendly UI.</p>
           <TodoList />
-          <NewTodoForm />
+          <NewTodo />
         </Container>
       </Provider>
     )
