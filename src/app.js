@@ -63,8 +63,7 @@ class App extends React.Component {
       <Provider store={store}>
         <GlobalStyle/>
         <Container>
-          <Header>Mini Todo List</Header>
-          <p>A minimalistic todo list with a friendly UI.</p>
+          <Header />
           <TodoList />
           <NewTodo />
         </Container>

@@ -1,7 +1,17 @@
 import React from 'react'
+import styled from 'styled-components'
+
+import ListTitle from '../list-title'
+import Todo from '../todo'
+
+const Wrapper = styled.div`
+  margin-bottom: 2rem;
+`
 
 export default ({ todos }) => (
-  <ul>
-    { todos.map(todo => <li key={todo.id}>{todo.todo} {todo.done}</li> )}
-  </ul>
+  <Wrapper>
+    <ListTitle>TODO:</ListTitle>
+    { todos.length === 0 && <p>No tasks yet! Add tasks below.</p> }
+    { todos.map(todo => <Todo key={todo.id} todo={todo.todo} done={todo.done} />)}
+  </Wrapper>
 )
