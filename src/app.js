@@ -1,11 +1,15 @@
 import React from 'react';
 import {createGlobalStyle} from 'styled-components';
 import {hot} from 'react-hot-loader/root';
+import { Provider } from 'react-redux'
 
 // Import modern-normalize & fonts
 import 'modern-normalize/modern-normalize.css';
 import woff2 from '../public/fonts/open-sans-v16-latin-regular.woff2';
 import woff from '../public/fonts/open-sans-v16-latin-regular.woff';
+
+// Import Redux store
+import createStore from './state/create-store'
 
 // Import Components
 import Container from './components/container';
@@ -68,10 +72,10 @@ class App extends React.Component {
 
   render() {
     this.registerServiceWorker()
-
+    const store = createStore({})
     const { todos } = this.state
     return (
-      <>
+      <Provider store={store}>
         <GlobalStyle/>
         <Container>
           <Header>Mini Todo List</Header>
@@ -79,7 +83,7 @@ class App extends React.Component {
           <TodoList todos={todos} />
           <NewTodoForm createTodo={todo => this.createTodo(todo) }/>
         </Container>
-      </>
+      </Provider>
     )
   }
 }
