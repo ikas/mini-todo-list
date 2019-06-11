@@ -43,14 +43,6 @@ const GlobalStyle = createGlobalStyle`
 
 // Main page
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      todos: [],
-    }
-  }
-
   registerServiceWorker() {
     // Register service worker
     if ('serviceWorker' in navigator) {
@@ -64,24 +56,17 @@ class App extends React.Component {
     }
   }
 
-  createTodo(todo) {
-    const { todos } = this.state
-    todos.push({ id: todos.length + 1, todo, done: false })
-    this.setState({ todos })
-  }
-
   render() {
     this.registerServiceWorker()
     const store = createStore({})
-    const { todos } = this.state
     return (
       <Provider store={store}>
         <GlobalStyle/>
         <Container>
           <Header>Mini Todo List</Header>
           <p>A minimalistic todo list with a friendly UI.</p>
-          <TodoList todos={todos} />
-          <NewTodoForm createTodo={todo => this.createTodo(todo) }/>
+          <TodoList />
+          <NewTodoForm />
         </Container>
       </Provider>
     )
