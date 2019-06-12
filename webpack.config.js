@@ -38,7 +38,7 @@ module.exports = (env, argv) => {
 						}
 					},
 					parallel: true,
-					cache: true
+					cache: false
 				})
 			],
 			splitChunks: {
