@@ -10,7 +10,7 @@ const Wrapper = styled.div`
 
 export default ({ todos }) => (
   <Wrapper>
-    <ListTitle>TODO:</ListTitle>
+    <ListTitle>I need to...</ListTitle>
     { todos.length === 0 && <p>No tasks yet! Add tasks below.</p> }
     { todos.map(todo => <Todo 
         key={todo.id}
