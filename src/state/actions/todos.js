@@ -6,3 +6,7 @@ export function createTodo(todo) {
     todo,
   })
 }
+
+export function markTodoAsDone(id) {
+  return dispatch => dispatch({ type: types.TODOS_MARK_AS_DONE, id })
+}

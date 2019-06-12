@@ -1,1 +1,2 @@
 export const TODOS_CREATE = 'TODOS_CREATE'
+export const TODOS_MARK_AS_DONE = 'TODOS_MARK_AS_DONE'

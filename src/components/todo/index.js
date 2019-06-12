@@ -1,1 +1,1 @@
-export { default } from './todo-view'
+export { default } from './todo-redux'
