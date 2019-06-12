@@ -36,7 +36,7 @@ const TodoText = styled.p`
     height: 1px;
     background: white;
     animation-name: strike;
-    animation-duration: 0.1s;
+    animation-duration: 0.2s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
     animation-fill-mode: forwards; 
