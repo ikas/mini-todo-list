@@ -1,12 +1,12 @@
 import { connect } from 'react-redux'
 
-import { markTodoAsDone } from '../../state/actions/todos'
+import { toggleDoneStatus } from '../../state/actions/todos'
 import TodoContainer from './todo-container'
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = dispatch => ({
-  markTodoAsDone: id => dispatch(markTodoAsDone(id)),
+  toggleDoneStatus: id => dispatch(toggleDoneStatus(id)),
 })
 
 export default connect(

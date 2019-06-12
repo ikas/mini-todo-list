@@ -7,6 +7,6 @@ export function createTodo(todo) {
   })
 }
 
-export function markTodoAsDone(id) {
-  return dispatch => dispatch({ type: types.TODOS_MARK_AS_DONE, id })
+export function toggleDoneStatus(id) {
+  return dispatch => dispatch({ type: types.TODOS_TOGGLE_DONE, id })
 }
