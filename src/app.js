@@ -5,38 +5,28 @@ import { Provider } from 'react-redux'
 
 // Import modern-normalize & fonts
 import 'modern-normalize/modern-normalize.css';
-import woff2 from '../public/fonts/open-sans-v16-latin-regular.woff2';
-import woff from '../public/fonts/open-sans-v16-latin-regular.woff';
 
 // Import Redux store
 import createStore from './state/create-store'
 
 // Import Components
-import Container from './components/container';
-import Header from './components/header';
+import Container from './components/container'
+import Header from './components/header'
 import TodoList from './components/todo-list'
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-display: fallback;
-    src: local('Open Sans Regular'), local('OpenSans-Regular'),
-        url('${woff2}') format('woff2'),
-        url('${woff}') format('woff'); 
-  }
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
 
   body {
-    font-family: Open Sans, Segoe UI, Tahoma, sans-serif !important;
-    background: #212121;
+    font-family: 'Ubuntu', sans-serif;
+    background: #171717;
     color: #fff;
     padding: 1em;
     line-height: 1.8em;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
-    word-wrap: break-word
+    word-wrap: break-word;
   }
 `;
 
