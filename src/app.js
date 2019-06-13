@@ -15,7 +15,6 @@ import createStore from './state/create-store'
 import Container from './components/container';
 import Header from './components/header';
 import TodoList from './components/todo-list'
-import NewTodo from './components/new-todo'
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
@@ -65,7 +64,6 @@ class App extends React.Component {
         <Container>
           <Header />
           <TodoList />
-          <NewTodo />
         </Container>
       </Provider>
     )
