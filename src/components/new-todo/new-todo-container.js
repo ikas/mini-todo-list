@@ -11,6 +11,10 @@ export default class NewTodoContainer extends React.Component {
     }
   }
 
+  componentDidMount(){
+    this.todoInput.focus()
+  }
+
   submitForm(ev) {
     ev.preventDefault()
     this.props.createTodo(this.state.todo)
@@ -22,6 +26,7 @@ export default class NewTodoContainer extends React.Component {
       todo={this.state.todo}
       onChange={ev => this.setState({ todo: ev.target.value })}
       submit={ev => this.submitForm(ev)}
+      refFunction={input => { this.todoInput = input; }}
       {...this.props}
     />
   }

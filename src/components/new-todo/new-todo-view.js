@@ -15,12 +15,13 @@ const Input = styled.input`
 	border-bottom: 1px solid white;
 	outline: none;
 	padding-bottom: 8px;
-	margin-left: 16px;
+	margin: 0 16px;
 `
 
-export default ({ todo, onChange, submit }) => (
+export default ({ todo, refFunction, onChange, submit }) => (
 	<Form onSubmit={ev => submit(ev)}>
 		<Input 
+			ref={input => refFunction(input)}
 			value={todo} 
 			onChange={onChange}
 			placeholder="Type your todo and hit enter!"
