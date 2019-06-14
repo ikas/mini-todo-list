@@ -6,18 +6,25 @@ import Checked from './assets/checked.js'
 
 const OuterWrapper = styled.div`
   display: flex;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+  border-radius: 5px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 `
 
 const Wrapper = styled.div`
   display: inline-flex;
+  align-items: center;
   cursor: pointer;
-  padding-left: 16px;
 `
 
 const TodoText = styled.p`
   position: relative;
-  margin: 0 1rem 0.5rem 1rem;
+  margin: 0 1rem;
   line-height: 20px;
   font-size: 16px;
   color: ${props => props.done ? 'grey' : 'white' };
