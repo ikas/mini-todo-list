@@ -35,23 +35,22 @@ const BinWrapper = styled.button`
   font-size: 12px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition:all 0.4s ease 0s;
+  justify-content: flex-end;
+  transition:all 0.2s ease 0s;
   padding: 0;
   border: none;
   cursor: pointer;
   outline: none;
+  color: white;
+  overflow: hidden;
 
   &.deleting {
-    background: white;
-    width: 100px;
-    border-radius: 10px;
-    padding: 4px 12px;
+    width: 90px;
   }
 
-  &.deleting::after {
-    content: 'Confirm';
-    padding-left: 4px;
+  &.deleting::before {
+    content: 'Confirm?';
+    padding-right: 4px;
   }
 `
 
@@ -78,7 +77,14 @@ export default ({
       </Wrapper>
       <BinWrapper 
         className={deleting ? 'deleting' : 'not-deleting'}
-        onClick={() => !deleting ? setDeleting(true) : deleteTodo(id)}
+        onClick={() => {
+          if(!deleting) {
+            setDeleting(true)
+            setTimeout(() => setDeleting(false), 5000)
+          } else {
+            deleteTodo(id)
+          }
+        }}
       >
         <Bin width={20} height={20} />
       </BinWrapper>
