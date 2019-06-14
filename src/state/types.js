@@ -1,2 +1,3 @@
 export const TODOS_CREATE = 'TODOS_CREATE'
 export const TODOS_TOGGLE_DONE = 'TODOS_TOGGLE_DONE'
+export const TODOS_DELETE = 'TODOS_DELETE'

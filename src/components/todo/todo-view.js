@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 import Bin from './assets/bin'
 import Checked from './assets/checked'
 import Empty from './assets/empty'
 
+import TodoText from './todo-text'
+
 const OuterWrapper = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 0.5rem;
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
   border-radius: 5px;
-  justify-content: space-between;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -24,46 +27,61 @@ const Wrapper = styled.div`
   cursor: pointer;
 `
 
-const TodoText = styled.p`
-  position: relative;
-  margin: 0 1rem;
-  line-height: 20px;
-  font-size: 16px;
-  color: ${props => props.done ? 'grey' : 'white' };
+const BinWrapper = styled.button`
+  background: transparent;
+  border-radius: 12px;
+  width: 20px;
+  height: 28px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:all 0.4s ease 0s;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
 
-  @keyframes strike {
-    0%   { width: 0; }
-    100% { width: 100%; }
+  &.deleting {
+    background: white;
+    width: 100px;
+    border-radius: 10px;
+    padding: 4px 12px;
   }
 
-  &.striked::after {
-    content: ' ';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: white;
-    animation-name: strike;
-    animation-duration: 0.2s;
-    animation-timing-function: linear;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards; 
+  &.deleting::after {
+    content: 'Confirm';
+    padding-left: 4px;
   }
 `
 
-export default ({ id, todo, done, toggleDoneStatus }) => (
-  <OuterWrapper>
-    <Wrapper onClick={() => toggleDoneStatus(id)}>
-      { done 
-        ? <Checked width={20} height={20} />
-        : <Empty width={20} height={20} />
-      }
-      <TodoText 
-        className={done ? 'striked' : ''} 
-        done={done}
-      >{todo}</TodoText>
-    </Wrapper>
-    <Bin width={20} height={20} onClick={() => console.log('delete')} />
-  </OuterWrapper>
-)
+export default ({ 
+  id, 
+  todo, 
+  done, 
+  toggleDoneStatus,
+  deleteTodo,
+}) => {
+  const [deleting, setDeleting] = useState(false)
+
+  return (
+    <OuterWrapper>
+      <Wrapper onClick={() => toggleDoneStatus(id)}>
+        { done 
+          ? <Checked width={20} height={20} />
+          : <Empty width={20} height={20} />
+        }
+        <TodoText 
+          className={done ? 'striked' : ''} 
+          done={done}
+        >{todo}</TodoText>
+      </Wrapper>
+      <BinWrapper 
+        className={deleting ? 'deleting' : 'not-deleting'}
+        onClick={() => !deleting ? setDeleting(true) : deleteTodo(id)}
+      >
+        <Bin width={20} height={20} />
+      </BinWrapper>
+    </OuterWrapper>
+  )
+}
