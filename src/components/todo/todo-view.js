@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Empty from './assets/empty.js'
-import Checked from './assets/checked.js'
+import Bin from './assets/bin'
+import Checked from './assets/checked'
+import Empty from './assets/empty'
 
 const OuterWrapper = styled.div`
   display: flex;
@@ -10,6 +11,7 @@ const OuterWrapper = styled.div`
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
   border-radius: 5px;
+  justify-content: space-between;
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -62,5 +64,6 @@ export default ({ id, todo, done, toggleDoneStatus }) => (
         done={done}
       >{todo}</TodoText>
     </Wrapper>
+    <Bin width={20} height={20} onClick={() => console.log('delete')} />
   </OuterWrapper>
 )
