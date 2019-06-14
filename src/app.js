@@ -1,10 +1,10 @@
-import React from 'react';
-import {createGlobalStyle} from 'styled-components';
-import {hot} from 'react-hot-loader/root';
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+import { hot } from 'react-hot-loader/root'
 import { Provider } from 'react-redux'
 
 // Import modern-normalize & fonts
-import 'modern-normalize/modern-normalize.css';
+import 'modern-normalize/modern-normalize.css'
 
 // Import Redux store
 import createStore from './state/create-store'

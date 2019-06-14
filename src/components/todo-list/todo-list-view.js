@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 import NewTodo from '../new-todo'
-import ListTitle from '../list-title'
 import Todo from '../todo'
+
+import ListTitle from './list-title'
 
 const Wrapper = styled.div`
   margin-bottom: 2rem;
