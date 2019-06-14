@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const Form = styled.form`
 	display: flex;
 	flex-direction: column;
+	margin-top: 0.5rem;
 `
 
 const Input = styled.input`
