@@ -6,6 +6,7 @@
     "start": "webpack-dev-server --hot --open --mode development",
     "build": "webpack --mode production",
     "now-build": "yarn run build",
+    "cypress:open": "yarn run cypress open",
     "test": "xo && stylelint './src/**/*.js'"
   },
   "main": "src/index.js",
@@ -22,6 +23,7 @@
     "cache-loader": "^3.0.1",
     "clean-css-loader": "^2.0.0",
     "css-loader": "^2.1.1",
+    "cypress": "^3.3.1",
     "eslint-config-xo-react": "^0.19.0",
     "eslint-plugin-react": "^7.13.0",
     "eslint-plugin-react-hooks": "^1.6.0",

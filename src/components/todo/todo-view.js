@@ -64,7 +64,7 @@ export default ({
   const [deleting, setDeleting] = useState(false)
 
   return (
-    <OuterWrapper>
+    <OuterWrapper className="todo-wrapper">
       <Wrapper onClick={() => toggleDoneStatus(id)}>
         { done 
           ? <Checked width={20} height={20} />

@@ -22,6 +22,7 @@ const Input = styled.input`
 export default ({ todo, refFunction, onChange, submit }) => (
 	<Form onSubmit={ev => submit(ev)}>
 		<Input 
+			id="new-todo"
 			ref={input => refFunction(input)}
 			value={todo} 
 			onChange={onChange}

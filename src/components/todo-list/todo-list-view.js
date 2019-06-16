@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `
 
 export default ({ todos }) => (
-  <Wrapper>
+  <Wrapper id="todo-list">
     <ListTitle>I need to...</ListTitle>
     { todos.map(todo => <Todo 
       key={todo.id}
