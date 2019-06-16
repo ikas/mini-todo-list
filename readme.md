@@ -52,19 +52,19 @@
 ```bash
 # Install dependencies
 
- $ npm install
+ $ yarn install
  
 # Start webpack-dev-server at port 8080
 
- $ npm start
+ $ yarn start
  
 # Run linters
 
- $ npm test
+ $ yarn test
  
 # Build app for production (gets output in the 'dist' directory)
 
- $ npm run build
+ $ yarn run build
 ```
 
 ## Deploying
