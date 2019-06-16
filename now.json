@@ -1,8 +1,12 @@
 {
     "version": 2,
-    "alias": ["styled-react-boilerplate.now.sh"],
+    "alias": ["mini-todo-list.now.sh"],
     "builds": [
-        { "src": "package.json", "use": "@now/static-build", "config": {"distDir": "dist"} }
+        { 
+          "src": "package.json", 
+          "use": "@now/static-build", 
+          "config": {"distDir": "dist"}
+        }
       ],
     "regions": ["all"]
 }
