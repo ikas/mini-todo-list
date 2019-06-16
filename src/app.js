@@ -1,10 +1,11 @@
-import React from 'react';
-import {createGlobalStyle} from 'styled-components';
-import {hot} from 'react-hot-loader/root';
+import React from 'react'
+import { createGlobalStyle } from 'styled-components'
+import { hot } from 'react-hot-loader/root'
 import { Provider } from 'react-redux'
+import { PersistGate } from 'redux-persist/integration/react'
 
 // Import modern-normalize & fonts
-import 'modern-normalize/modern-normalize.css';
+import 'modern-normalize/modern-normalize.css'
 
 // Import Redux store
 import createStore from './state/create-store'
@@ -47,14 +48,16 @@ class App extends React.Component {
 
   render() {
     this.registerServiceWorker()
-    const store = createStore({})
+    const { store, persistor } = createStore()
     return (
       <Provider store={store}>
-        <GlobalStyle/>
-        <Container>
-          <Header />
-          <TodoList />
-        </Container>
+        <PersistGate loading={null} persistor={persistor}>
+          <GlobalStyle/>
+          <Container>
+            <Header />
+            <TodoList />
+          </Container>
+        </PersistGate>
       </Provider>
     )
   }

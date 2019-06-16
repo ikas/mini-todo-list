@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server --hot --open --mode development",
     "build": "webpack --mode production",
-    "now-build": "npm run build",
+    "now-build": "yarn run build",
     "test": "xo && stylelint './src/**/*.js'"
   },
   "main": "src/index.js",
@@ -58,6 +58,7 @@
     "react-hot-loader": "^4.8.8",
     "react-redux": "^7.1.0",
     "redux": "^4.0.1",
+    "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.2.0",
     "uuid": "^3.3.2"
