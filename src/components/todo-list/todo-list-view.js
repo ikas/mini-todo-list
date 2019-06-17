@@ -12,14 +12,15 @@ const Wrapper = styled.div`
   flex-direction: column;
 `
 
-export default ({ todos }) => (
+export default ({ todos, currentSelection }) => (
   <Wrapper id="todo-list">
     <ListTitle>I need to...</ListTitle>
-    { todos.map(todo => <Todo 
+    { todos.map((todo, idx) => <Todo 
       key={todo.id}
       id={todo.id}
       todo={todo.todo}
       done={todo.done}
+      selected={idx === currentSelection}
     />)}
     <NewTodo />
   </Wrapper>
