@@ -13,6 +13,8 @@ export default class KeyMapperContainer extends React.Component {
           selectUp: this.props.moveSelectionUp,
           selectDown: this.props.moveSelectionDown,
         }}
+        focused={true}
+        attach={window}
       >
         {this.props.children}
       </HotKeys>
