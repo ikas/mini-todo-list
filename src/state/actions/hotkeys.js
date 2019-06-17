@@ -1,6 +1,6 @@
 import * as types from '../types'
 
-import { deleteTodo } from './todos'
+import { deleteTodo, toggleDoneStatus } from './todos'
 
 export function moveSelectionUp() {
   return (dispatch, getState) => dispatch({ 
@@ -22,5 +22,14 @@ export function deleteSelection() {
     const { todos } = getState()
     const toDelete = todos[currentSelection]
     return dispatch(deleteTodo(toDelete.id))
+  }
+}
+
+export function toggleDoneStatusSelection() {
+  return (dispatch, getState) => {
+    const { currentSelection } = getState().hotkeys
+    const { todos } = getState()
+    const toToggle = todos[currentSelection]
+    return dispatch(toggleDoneStatus(toToggle.id))
   }
 }

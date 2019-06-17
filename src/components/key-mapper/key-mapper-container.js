@@ -9,14 +9,17 @@ export default class KeyMapperContainer extends React.Component {
           moveSelectionUp: 'up',
           moveSelectionDown: 'down',
           deleteSelection: 'command+backspace',
+          toggleDoneStatusSelection: 'enter',
         }}
         handlers={{
           moveSelectionUp: this.props.moveSelectionUp,
           moveSelectionDown: this.props.moveSelectionDown,
           deleteSelection: this.props.deleteSelection,
+          toggleDoneStatusSelection: this.props.toggleDoneStatusSelection,
         }}
         focused={true}
         attach={window}
+        style={{ outline: 'none' }}
       >
         {this.props.children}
       </HotKeys>
