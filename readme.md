@@ -1,33 +1,24 @@
-# Styled React Boilerplate ⚛️ 💅
+# Mini Todo List ☑️
 
-> Minimal & Modern Boilerplate for building apps with React & styled-components
+A minimalistic todo list with an easy-to-use UI.
 
-[![Build Status](https://travis-ci.org/xxczaki/styled-react-boilerplate.svg?branch=master)](https://travis-ci.org/xxczaki/styled-react-boilerplate) 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
+[**Check the demo here**](https://mini-todo-list.now.sh)
 
-[**Demo Site**](https://styled-react-boilerplate.now.sh)
+## Features
 
----
+- **Todo list automatically saved to local storage** (your todos are kept persisted when you use the app in the same browser)
+- **Works offline** (no authentication and barely no Internet required)
+- **Quickly jot down your todos** (no loading times, just you and your todo list)
+- **Awesome arrow navigation** (manage your todo list without using a mouse!)
 
-![](https://lighthouse.now.sh/?perf=100&pwa=100&a11y=100&bp=100&seo=100)
+## Code features
 
-## Highlights
-- Easier and less complex than [create-react-app](https://github.com/facebook/create-react-app)
-- Features styled-components
-- Uses React Hooks
-- Includes optimized Webpack & Babel configuration
-- Perfect Lighthouse score
-- Non-blocking CSS & fonts loading
-- Friendly errors & warnings
-- Ensures clean code with xo & stylelint
-- Normalizes default browser style with modern-normalize
-- HTML template with social media meta tags
-- Targets the latest browsers
-- Works offline
-- Preconfigured hot reloading using [react-hot-loader](https://github.com/gaearon/react-hot-loader)
+- Full React & Redux (also a great boilerplate for other projects!)
+- Styled using styled-components
+- End-to-end testing using [Cypress](https://www.cypress.io/)
 
 ## File Tree
+
 ```bash
 ├── public                # Folder with HTML template & favicon
 │   ├── favicon.png       # Example favicon
@@ -49,39 +40,25 @@
 ```
 
 ## Usage
+
 ```bash
 # Install dependencies
+$ yarn install
 
- $ yarn install
- 
 # Start webpack-dev-server at port 8080
+$ yarn start
 
- $ yarn start
- 
-# Run linters
+# Open Cypress UI
+$ yarn cypress:open
 
- $ yarn test
- 
 # Build app for production (gets output in the 'dist' directory)
-
- $ yarn run build
+$ yarn run build
 ```
 
 ## Deploying
 
-I recommend to use either [Zeit Now](https://now.sh) or [Netlify](https://netlify.com) for hosting your site.
+Ready to deploy with either [Zeit Now](https://now.sh) or [Netlify](https://netlify.com).
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/xxczaki/styled-react-boilerplate)
-
-## TODO
-
-- [ ] Testing
-- [x] PWA
-
-## Related
-
-- [static-webpack-boilerplate](https://github.com/xxczaki/static-webpack-boilerplate)
-
-### License
+## License
 
 MIT
