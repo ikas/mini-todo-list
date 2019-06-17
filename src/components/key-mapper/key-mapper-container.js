@@ -6,12 +6,14 @@ export default class KeyMapperContainer extends React.Component {
     return (
       <HotKeys 
         keyMap={{
-          selectUp: 'up',
-          selectDown: 'down',
+          moveSelectionUp: 'up',
+          moveSelectionDown: 'down',
+          deleteSelection: 'command+backspace',
         }}
         handlers={{
-          selectUp: this.props.moveSelectionUp,
-          selectDown: this.props.moveSelectionDown,
+          moveSelectionUp: this.props.moveSelectionUp,
+          moveSelectionDown: this.props.moveSelectionDown,
+          deleteSelection: this.props.deleteSelection,
         }}
         focused={true}
         attach={window}
