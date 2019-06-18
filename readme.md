@@ -1,15 +1,14 @@
-# Mini Todo List ☑️
+# Mini Todo List
 
-A minimalistic todo list with an easy-to-use UI.
+✅ Minimalistic todo list with a friendly UI
+
+✅ Data automatically saved to local storage: todos are persisted when you use the app in the same browser
+
+✅ Works offline and 🔥**blazing fast** 🔥- no accounts, no authentication, no loading times, just you and your todo list
+
+✅ Awesome hotkeys - manage todos without using the mouse!
 
 [**Check the demo here**](https://mini-todo-list.now.sh)
-
-## Features
-
-- **Todo list automatically saved to local storage** (your todos are kept persisted when you use the app in the same browser)
-- **Works offline** (no authentication and barely no Internet required)
-- **Quickly jot down your todos** (no loading times, just you and your todo list)
-- **Awesome hotkeys** (manage your todo list without using a mouse!)
 
 ## Hotkeys
 
@@ -27,23 +26,30 @@ A minimalistic todo list with an easy-to-use UI.
 ## File Tree
 
 ```bash
-├── public                # Folder with HTML template & favicon
-│   ├── favicon.png       # Example favicon
-│   └── index.html        # HTML template
-├── src                   # Main folder with index.js & components
-│   ├── components        # Subfolder with components
-│   │   ├── button.js     # Example component 1
-│   │   └── container.js  # Example component 2
-│   │   └── counter.js    # Example component 3
-│   │   └── header.js     # Example component 4
-│   └── app.js            # Main page file
-│   └── index.js          # React DOM rendering options
-├── .npmrc                # npm config
-├── .stylelintrc          # stylelint config
-├── .travis.yml           # Travis CI config
-├── package.json          # Package config with scripts, list of dependencies etc.
-├── webpack.config.js     # Webpack config
-├── babel.config.js       # Babel config
+├── public                           # Folder with HTML template & favicon
+│   ├── favicon.png                  # Example favicon
+│   └── index.html                   # HTML template
+├── src                              # Main folder with index.js & components
+│   ├── components                   # Subfolder with components
+│   │   ├── component                # Example component structure:
+│   │     ├── index.js               # Exports the component entry point
+│   │     ├── component-redux.js     # Connects component to Redux state store
+│   │     ├── component-container.js # Component interactions and HOCs
+│   │     └── component-view.js      # Component (dumb) view
+│   ├── state                        # App state
+│   │   ├── actions                  # Actions to trigger changes to the app state
+│   │   ├── reducers                 # Reducers of the app
+│   │   ├── create-store.js          # App state store creator
+│   │   └── types.js                 # Possible action types
+│   └── app.js                       # Main page file
+│   └── index.js                     # React DOM rendering options
+│   └── utils.js                     # Constants and helpers use app-wide
+├── .npmrc                           # npm config
+├── .stylelintrc                     # stylelint config
+├── .travis.yml                      # Travis CI config
+├── package.json                     # Package config with scripts, list of dependencies etc.
+├── webpack.config.js                # Webpack config
+├── babel.config.js                  # Babel config
 ```
 
 ## Usage
