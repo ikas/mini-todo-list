@@ -18,7 +18,6 @@ const OuterWrapper = styled.div`
   transition: all 0.2s ease;
   border-radius: 5px;
   border: 1px solid ${props => props.selected ? COLOR_GREEN : 'transparent'};
-  transform: scale(${props => props.selected ? '1.005' : '1'});
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);

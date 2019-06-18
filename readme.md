@@ -9,7 +9,14 @@ A minimalistic todo list with an easy-to-use UI.
 - **Todo list automatically saved to local storage** (your todos are kept persisted when you use the app in the same browser)
 - **Works offline** (no authentication and barely no Internet required)
 - **Quickly jot down your todos** (no loading times, just you and your todo list)
-- **Awesome arrow navigation** (manage your todo list without using a mouse!)
+- **Awesome hotkeys** (manage your todo list without using a mouse!)
+
+## Hotkeys
+
+- `up` - move selected todo up
+- `down` - move selected todo down
+- `enter` - toggle selected todo done status
+- `command+backspace` - delete selected todo
 
 ## Code features
 

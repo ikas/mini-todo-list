@@ -15,6 +15,7 @@ import KeyMapper from './components/key-mapper'
 import Container from './components/container'
 import Header from './components/header'
 import TodoList from './components/todo-list'
+import HotkeysDescription from './components/hetkeys-description'
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
@@ -58,6 +59,7 @@ class App extends React.Component {
             <Container>
               <Header />
               <TodoList />
+              <HotkeysDescription />
             </Container>
           </KeyMapper>
         </PersistGate>

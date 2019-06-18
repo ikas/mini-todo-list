@@ -27,7 +27,7 @@ export default function (state = initialState, action) {
 
     case types.HOTKEYS_MOVE_SELECTION_DOWN: {
       return Object.assign({}, state, {
-        currentSelection: Math.min(action.current + 1, state.todosCount),
+        currentSelection: Math.min(action.current + 1, state.todosCount - 1),
       })
     }
     
