@@ -20,6 +20,7 @@ export default class KeyMapperContainer extends React.Component {
         focused={true}
         attach={window}
         style={{ outline: 'none' }}
+        id="key-mapper"
       >
         {this.props.children}
       </HotKeys>

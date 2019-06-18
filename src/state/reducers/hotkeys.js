@@ -2,7 +2,7 @@ import * as types from '../types'
 
 const initialState = {
   todosCount: 0,
-  currentSelection: undefined,
+  currentSelection: 0,
 }
 
 export default function (state = initialState, action) {
