@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
+import { COLOR_GREEN } from '../../utils'
+
 import Bin from './assets/bin'
 import Checked from './assets/checked'
 import Empty from './assets/empty'
@@ -15,6 +17,7 @@ const OuterWrapper = styled.div`
   padding: 0.5rem 1rem;
   transition: all 0.2s ease;
   border-radius: 5px;
+  border: 1px solid ${props => props.selected ? COLOR_GREEN : 'transparent'};
 
   &:hover {
     background: rgba(255, 255, 255, 0.1);
@@ -60,11 +63,12 @@ export default ({
   done, 
   toggleDoneStatus,
   deleteTodo,
+  selected,
 }) => {
   const [deleting, setDeleting] = useState(false)
 
   return (
-    <OuterWrapper className="todo-wrapper">
+    <OuterWrapper className="todo-wrapper" selected={selected}>
       <Wrapper onClick={() => toggleDoneStatus(id)}>
         { done 
           ? <Checked width={20} height={20} />

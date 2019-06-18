@@ -11,9 +11,11 @@ import 'modern-normalize/modern-normalize.css'
 import createStore from './state/create-store'
 
 // Import Components
+import KeyMapper from './components/key-mapper'
 import Container from './components/container'
 import Header from './components/header'
 import TodoList from './components/todo-list'
+import HotkeysDescription from './components/hetkeys-description'
 
 // Global Style
 const GlobalStyle = createGlobalStyle`
@@ -52,11 +54,14 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <GlobalStyle/>
-          <Container>
-            <Header />
-            <TodoList />
-          </Container>
+          <KeyMapper>
+            <GlobalStyle/>
+            <Container>
+              <Header />
+              <TodoList />
+              <HotkeysDescription />
+            </Container>
+          </KeyMapper>
         </PersistGate>
       </Provider>
     )
