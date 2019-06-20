@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 import { hot } from 'react-hot-loader/root'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import ReactGA from 'react-ga'
 
 // Import modern-normalize & fonts
 import 'modern-normalize/modern-normalize.css'
@@ -49,7 +50,14 @@ class App extends React.Component {
   }
 
   render() {
+    // Register service worker
     this.registerServiceWorker()
+
+    // Init GA
+    ReactGA.initialize('UA-85742872-2')
+    ReactGA.pageview(window.location.pathname + window.location.search)
+
+    // Create redux store
     const { store, persistor } = createStore()
     return (
       <Provider store={store}>
