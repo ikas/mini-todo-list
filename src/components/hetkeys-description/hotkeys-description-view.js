@@ -2,17 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  align-self: flex-end;
-  justify-self: flex-end;
-  text-align: right;
+  margin-top: 1rem;
 `
 
 const HotkeysHeader = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
 `
 
 const HotkeyWrapper = styled.div`
-  font-size: 14px;
+  font-size: 12px;
 `
 
 export default () => (
@@ -29,6 +27,9 @@ export default () => (
     </HotkeyWrapper>
     <HotkeyWrapper>
       <b>command+backspace</b>: Delete selected todo
+    </HotkeyWrapper>
+    <HotkeyWrapper>
+      <b>command+down</b>: Focus the new todo input (== add new todos)
     </HotkeyWrapper>
   </Wrapper>
 )

@@ -16,6 +16,7 @@
 - `down` - move selected todo down
 - `enter` - toggle selected todo done status
 - `command+backspace` - delete selected todo
+- `command+down` - focus new todo input == add new todo
 
 ## Code features
 

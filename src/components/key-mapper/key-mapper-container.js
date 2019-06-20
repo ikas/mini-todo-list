@@ -10,12 +10,14 @@ export default class KeyMapperContainer extends React.Component {
           moveSelectionDown: 'down',
           deleteSelection: 'command+backspace',
           toggleDoneStatusSelection: 'enter',
+          focusNewTaskInput: 'command+down',
         }}
         handlers={{
           moveSelectionUp: this.props.moveSelectionUp,
           moveSelectionDown: this.props.moveSelectionDown,
           deleteSelection: this.props.deleteSelection,
           toggleDoneStatusSelection: this.props.toggleDoneStatusSelection,
+          focusNewTaskInput: this.props.focusNewTaskInput,
         }}
         focused={true}
         attach={window}

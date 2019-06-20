@@ -11,14 +11,11 @@ export default class NewTodoContainer extends React.Component {
     }
   }
 
-  componentDidMount(){
-    this.todoInput.focus()
-  }
-
   submitForm(ev) {
     ev.preventDefault()
     this.props.createTodo(this.state.todo)
     this.setState({ todo: '' })
+    document.getElementById('new-todo').blur()
   }
 
   render () {

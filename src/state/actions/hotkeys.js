@@ -33,3 +33,9 @@ export function toggleDoneStatusSelection() {
     return dispatch(toggleDoneStatus(toToggle.id))
   }
 }
+
+export function focusNewTaskInput() {
+  return () => {
+    document.getElementById('new-todo').focus()
+  }
+}

@@ -5,6 +5,7 @@ import {
   moveSelectionDown, 
   deleteSelection, 
   toggleDoneStatusSelection,
+  focusNewTaskInput,
 } from '../../state/actions/hotkeys'
 import KeyMapperContainer from './key-mapper-container'
 
@@ -15,6 +16,7 @@ const mapDispatchToProps = dispatch => ({
   moveSelectionDown: () => dispatch(moveSelectionDown()),
   deleteSelection: () => dispatch(deleteSelection()),
   toggleDoneStatusSelection: () => dispatch(toggleDoneStatusSelection()),
+  focusNewTaskInput: () => dispatch(focusNewTaskInput()),
 })
 
 export default connect(

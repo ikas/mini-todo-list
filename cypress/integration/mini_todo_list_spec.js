@@ -3,10 +3,6 @@ describe('Mini Todo List', () => {
     cy.visit('/')
   })
 
-  it('new todo input is ready to be typed', () => {
-    cy.get('#new-todo').should('have.focus')
-  })
-
   it('adds todos', () => {
     cy.get('#new-todo')
       .type('Something to do 1 {enter}')
