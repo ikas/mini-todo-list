@@ -16,7 +16,6 @@ const Input = styled.input`
 	border-bottom: 1px solid white;
 	outline: none;
 	padding-bottom: 8px;
-	margin: 0 16px;
 `
 
 export default ({ todo, refFunction, onChange, submit }) => (
