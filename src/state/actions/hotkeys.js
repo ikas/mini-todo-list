@@ -35,7 +35,12 @@ export function toggleDoneStatusSelection() {
 }
 
 export function focusNewTaskInput() {
-  return () => {
+  return dispatch => {
     document.getElementById('new-todo').focus()
+    return dispatch({ type: types.HOTKEYS_REMOVE_SELECTION })
   }
+}
+
+export function removeSelection() {
+  return dispatch => dispatch({ type: types.HOTKEYS_REMOVE_SELECTION })
 }

@@ -26,6 +26,7 @@ export default ({ todo, refFunction, onChange, submit }) => (
 			value={todo} 
 			onChange={onChange}
 			placeholder="Type your todo and hit enter!"
+			autoComplete="off"
 		/>
 	</Form>
 )
